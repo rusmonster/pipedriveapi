@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Pipedrive API</string>
+	<string name="error_fetch_default">Error fetching persons</string>
+	<string name="action_retry">Retry</string>
+
+	<string name="menu_logout">Logout</string>
+
+	<string name="details_id">ID</string>
+	<string name="details_name">Name</string>
+
+	<string name="login_title">Sign in</string>
+	<string name="login_email">Email</string>
+	<string name="login_password">Password</string>
+	<string name="login_token">Token</string>
+	<string name="login_sign_in">Sign in</string>
+	<string name="login_save_credentials">Save credentials</string>
+
+	<string name="login_error_empty_fields">Please enter login and password or token</string>
+	<string name="login_error_empty_auth">Your account contains no access tokens</string>
+	<string name="login_error_invalid_token">Cannot login using the token</string>
+	<string name="login_error_unknown">Sign in failed</string>
+
+</resources>

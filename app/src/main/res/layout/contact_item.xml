@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<data>
+
+		<variable name="contact" type="com.example.dkalita.pipedriveapi.datasource.DbContact" />
+
+	</data>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+		<TextView
+				style="@style/DetailsItemLabel"
+				android:text="@{contact.label}" />
+
+		<TextView
+				style="@style/DetailsItemValue"
+				android:text="@{contact.value}" />
+
+	</LinearLayout>
+
+</layout>

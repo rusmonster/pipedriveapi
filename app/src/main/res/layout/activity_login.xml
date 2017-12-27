@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<data>
+
+		<import type="android.view.View"/>
+
+		<variable name="model" type="com.example.dkalita.pipedriveapi.viewmodel.LoginViewModel" />
+
+	</data>
+
+	<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+		<ProgressBar
+				android:id="@+id/loginProgressView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:visibility="@{safeUnbox(model.isInProgress) ? View.VISIBLE : View.GONE}" />
+
+		<ScrollView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scrollbars="none"
+				android:visibility="@{safeUnbox(model.isInProgress) ? View.GONE : View.VISIBLE}">
+
+			<LinearLayout
+					android:id="@+id/loginFormView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="16dp"
+					android:orientation="vertical">
+
+				<android.support.design.widget.TextInputLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+
+					<android.support.design.widget.TextInputEditText
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:hint="@string/login_email"
+							android:inputType="textEmailAddress"
+							android:singleLine="true"
+							android:text="@={model.login}" />
+
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+
+					<android.support.design.widget.TextInputEditText
+							android:id="@+id/loginPasswordView"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:hint="@string/login_password"
+							android:imeActionId="6"
+							android:imeActionLabel="@string/login_sign_in"
+							android:imeOptions="actionDone"
+							android:inputType="textPassword"
+							android:singleLine="true"
+							android:text="@={model.password}"/>
+
+				</android.support.design.widget.TextInputLayout>
+
+				<android.support.design.widget.TextInputLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content">
+
+					<android.support.design.widget.TextInputEditText
+							android:id="@+id/loginTokenView"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:hint="@string/login_token"
+							android:imeActionId="6"
+							android:imeActionLabel="@string/login_sign_in"
+							android:imeOptions="actionDone"
+							android:singleLine="true"
+							android:text="@={model.token}" />
+
+				</android.support.design.widget.TextInputLayout>
+
+				<CheckBox
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/login_save_credentials"
+					android:checked="@={model.saveCredentials}" />
+
+				<Button
+						android:id="@+id/loginButtonView"
+						style="?android:textAppearanceSmall"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="16dp"
+						android:text="@string/login_sign_in"
+						android:textStyle="bold"
+						android:onClick="@{() -> model.attemptLogin()}" />
+
+			</LinearLayout>
+
+		</ScrollView>
+
+	</FrameLayout>
+
+</layout>

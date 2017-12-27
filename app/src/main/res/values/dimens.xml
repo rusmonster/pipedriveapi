@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<dimen name="app_bar_height">310dp</dimen>
+	<dimen name="details_image_size">180dp</dimen>
+
+</resources>

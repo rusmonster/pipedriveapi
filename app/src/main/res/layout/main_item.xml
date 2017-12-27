@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<data>
+
+		<variable name="person" type="com.example.dkalita.pipedriveapi.datasource.DbPerson" />
+
+		<variable name="listener" type="com.example.dkalita.pipedriveapi.common.OnPersonSelectedListener" />
+
+	</data>
+
+	<TextView
+			android:id="@+id/main_item_text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="20dp"
+			android:background="?attr/selectableItemBackground"
+			android:maxLines="2"
+			android:ellipsize="end"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:text="@{person.name}"
+			android:onClick="@{() -> listener.onPersonSelected(person)}"/>
+
+</layout>

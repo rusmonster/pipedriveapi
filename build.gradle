@@ -1,0 +1,30 @@
+buildscript {
+	ext {
+		kotlinVersion = '1.2.20'
+		androidGradlePluginVersion = '3.0.1'
+		androidSupportVersion = '26.1.0'
+		androidArchVersion = '1.0.0'
+		glideVersion='4.5.0'
+		daggerVersion = "2.11"
+		powermockVersion = "1.6.2"
+	}
+	repositories {
+		google()
+		jcenter()
+	}
+	dependencies {
+		classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+	}
+}
+
+allprojects {
+	repositories {
+		google()
+		jcenter()
+	}
+}
+
+task clean(type: Delete) {
+	delete rootProject.buildDir
+}
